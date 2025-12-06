@@ -92,8 +92,20 @@ custom_mutator_p2p_message() {
     execute_in_module "custommutator" "$1"
 }
 
+custom_mutator_secp256k1_signature() {
+    execute_in_module "custommutator" "$1"
+}
+
+decred_secp256k1() {
+    execute_in_module "modules/decredsecp256k1" "$1"
+}
+
+secp256k1() {
+    execute_in_module "modules/secp256k1" "$1"
+}
+
 # Define the list of modules
-modules="bitcoin_core rust_bitcoin rust_miniscript tiny_miniscript btcd nbitcoin embit lnd ldk nlightning clightning eclair lightning_kmp bitcoinj custom_mutator_bolt11 custom_mutator_bolt12_offer custom_mutator_p2p_message"
+modules="bitcoin_core rust_bitcoin rust_miniscript tiny_miniscript btcd nbitcoin embit lnd ldk nlightning clightning eclair lightning_kmp bitcoinj custom_mutator_bolt11 custom_mutator_bolt12_offer custom_mutator_p2p_message custom_mutator_secp256k1_signature decred_secp256k1 secp256k1"
 
 # Full clean: runs `make clean` in all module directories
 full_clean() {

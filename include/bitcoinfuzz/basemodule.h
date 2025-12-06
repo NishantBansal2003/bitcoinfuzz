@@ -30,9 +30,14 @@ namespace bitcoinfuzz
         virtual std::optional<std::string> deserialize_offer(std::string str) const;
         virtual std::optional<int> cmpctblocks_parse(std::span<const uint8_t> buffer) const;
         virtual std::optional<std::string> parse_p2p_message(std::span<const uint8_t> buffer) const;
-        virtual std::optional<std::string> parse_p2p_lightning_message(std::span<const uint8_t> buffer) const; 
+        virtual std::optional<std::string> parse_p2p_lightning_message(std::span<const uint8_t> buffer) const;
         virtual std::optional<std::string> transaction_eval(std::span<const uint8_t> buffer) const;
         virtual std::optional<std::string> bip32_master_keygen(std::span<const uint8_t> buffer) const;
+        virtual std::optional<std::string> private_to_public_key(std::span<const uint8_t> buffer) const;
+        virtual std::optional<std::string> sign_compact(std::span<const uint8_t> buffer, std::span<const uint8_t> hash) const;
+        virtual std::optional<std::string> sign_der(std::span<const uint8_t> buffer, std::span<const uint8_t> hash) const;
+        virtual std::optional<bool> sign_verify(std::span<const uint8_t> buffer, std::span<const uint8_t> hash, std::span<const uint8_t> sign) const;
+        virtual std::optional<std::string> ecdh(std::span<const uint8_t> buffer) const;
 
         virtual ~BaseModule() noexcept;
     };

@@ -77,15 +77,39 @@ namespace bitcoinfuzz
     {
         return std::nullopt;
     }
-    
+
     std::optional<std::string> BaseModule::parse_p2p_lightning_message(std::span<const uint8_t> buffer) const
     {
         return std::nullopt;
     }
-    
+
     std::optional<std::string> BaseModule::bip32_master_keygen(std::span<const uint8_t> buffer) const
     {
         return std::nullopt;
     }
 
+    std::optional<std::string> BaseModule::private_to_public_key(std::span<const uint8_t> buffer) const
+    {
+        return std::nullopt;
+    }
+
+    std::optional<std::string> BaseModule::sign_compact(std::span<const uint8_t> buffer, std::span<const uint8_t> hash) const
+    {
+        return std::nullopt;
+    }
+
+    std::optional<std::string> BaseModule::sign_der(std::span<const uint8_t> buffer, std::span<const uint8_t> hash) const
+    {
+        return std::nullopt;
+    }
+
+    std::optional<bool> BaseModule::sign_verify(std::span<const uint8_t> buffer, std::span<const uint8_t> hash, std::span<const uint8_t> sign) const
+    {
+        return std::nullopt;
+    }
+
+    std::optional<std::string> BaseModule::ecdh(std::span<const uint8_t> buffer) const
+    {
+        return std::nullopt;
+    }
 }
